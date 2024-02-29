@@ -39,3 +39,15 @@ export const createSyncSongWithSongIdJob = (songId) => {
         "source": "netease"
     });
 };
+
+export const checkMediaFetcherLib = data => get("/media-fetcher-lib/version-check", data);
+export const updateMediaFetcherLib = (version) => {
+    return post("/media-fetcher-lib/update", {
+        "version": version,
+    });
+};
+
+export const getGlobalConfig = _ => get("/config/global", {});
+export const setGlobalConfig = (config) => {
+    return post("/config/global", config);
+};
